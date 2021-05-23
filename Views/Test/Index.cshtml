@@ -1,0 +1,24 @@
+@model List<EZCourse.Controllers.TestController.User>
+@{
+   ViewData["Title"] = "Title of Test - Index";
+   var countHtml = $"<h2>{Model.Count} users</h2>";
+}
+    @Html.Raw(countHtml)
+    <table class="table">
+        <tr>
+            <th>Id</th>
+            <th>Name</th>
+        </tr>
+ 
+      @foreach (var user in Model)
+      {
+          <tr>
+            <td>@user.Id</td>
+            <td>@user.Name</td>
+        </tr>
+      }
+
+    </table>
+   
+
+
